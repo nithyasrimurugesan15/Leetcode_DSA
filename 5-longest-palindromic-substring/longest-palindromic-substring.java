@@ -4,6 +4,7 @@ class Solution {
 
         int start = 0;
         int maxLength = 1;
+        int end=0;
 
         for (int i = 0; i < s.length(); i++) {
 
@@ -16,12 +17,13 @@ class Solution {
                     if (length > maxLength) {
                         maxLength = length;
                         start = i;
+                        end=j;
                     }
                 }
             }
         }
 
-        return s.substring(start, start + maxLength);
+        return s.substring(start, end+1);
     }
 
     public boolean isPalindrome(String s, int i, int j) {
